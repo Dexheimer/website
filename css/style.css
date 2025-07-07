@@ -37,6 +37,7 @@ body {
 
 .navbar-brand-text {
   font-weight: bold;
+  margin-right: 0.75rem;
   color: #14532d;
   font-size: 1.1rem;
   white-space: nowrap;
@@ -594,10 +595,18 @@ body {
     align-items: center;
   }
   .navbar-toggler {
-    margin-left: auto;
+    margin-left: 0.75rem;
   }
   .navbar-collapse {
-    width: 100%;
+    width: 100% !important;
+    background: #fff; /* opcional: fundo branco para o menu aberto */
+    box-shadow: 0 2px 8px rgba(73, 68, 68, 0.03);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 999;
+    border-radius: 0 0 12px 12px;
+    padding: 1rem 0.5rem;
   }
   .navbar-menu {
     flex-direction: column;
@@ -611,14 +620,25 @@ body {
     text-align: left;
     padding-left: 0;
   }
-  .navbar-brand-text.d-lg-none {
-    display: block !important;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #14532d;
-    margin-bottom: 0.5rem;
-  }
-  .navbar-brand-text.d-none.d-lg-block {
-    display: none !important;
+}
+
+@media (max-width: 500px) {
+  .navbar-limite {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
+
+  .navbar-brand-text {
+      white-space: normal;
+      word-break: break-word;
+      font-size: 1rem; /* pode reduzir um pouco a fonte se quiser */
+      margin-right: 0.5rem; /* espaço entre texto e hamburger */
+      max-width: 60vw; /* impede que o texto invada o hamburger */
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .navbar-toggler {
+      margin-left: 0.5rem;
+    }
+
